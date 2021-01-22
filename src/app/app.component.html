@@ -1,4 +1,4 @@
-<h1>Welcome Angular</h1>
+<!-- <h1>Welcome Angular</h1>
 <button (click)="getName()"> Get My Name </button>
 
 <button (click)="myEvent('click event')">Click Me</button>
@@ -7,11 +7,11 @@
 <br>
 <input type="text" (blur)="myEvent( 'Blur Event' )" />
 
-<!-- 
+
 <h1>Get Angular Value</h1>
 <input type="text" (keyup)="getVal($event.target.value)" />
 
-<h2>{{currentVal}}</h2> -->
+<h2>{{currentVal}}</h2>
 
 
 <h1>Get Angular Value method 2</h1>
@@ -24,7 +24,7 @@
 
 <h1>Condition in Angular</h1>
 
-<!-- <div *ngIf="show=='yes'; then ifBlock else elseBlock"></div>
+<div *ngIf="show=='yes'; then ifBlock else elseBlock"></div>
 
 <ng-template #ifBlock>
     <h1> Else If Block </h1>
@@ -32,7 +32,9 @@
 
 <ng-template #elseBlock>
     <h1> Else Block </h1>
-</ng-template> -->
+</ng-template>
+
+
 
 <ng-template [ngIf]="show == 'red'">
     <h1>Red Block</h1>
@@ -46,5 +48,59 @@
     <h1>Blue Block</h1>
 </ng-template>
 
+=====For Loop ========
 
-<!-- <router-outlet></router-outlet> -->
+<h1>For Loop</h1>
+
+<h4 *ngFor="let item of data">
+    <ul>
+        <li>{{item.name}}
+            <ul>
+                <li>{{item.gender}}</li>
+                <li>{{item.age}}</li>
+                <li>{{item.area}}</li>
+            </ul>
+        </li>
+    </ul>
+</h4>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <h1>Simple Form</h1>
+                <form #simpleForm="ngForm" (ngSubmit)="getUserValue(simpleForm.value)">
+                    <input type="text" ngModel name="username" placeholder="Enter Your Name" /> <br> <br>
+                    <input type="text" ngModel name="age" placeholder="Enter Age" /> <br> <br>
+                    <input type="text" ngModel name="address" placeholder="Enter Address" /> <br> <br>
+                    <input type="number" ngModel name="gender" placeholder="Enter User Gender" /> <br> <br>
+                    <button>Get User Value</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+
+
+<div class="parent">
+    <h1 class="header">Parent Component</h1>
+    <h3 class="para">
+        Child Says : {{message3}}
+    </h3>
+
+    <div class="c1">
+        <child [data]="message"></child>
+    </div>
+    <div class="c2">
+        <child1 [data]="message1"></child1>
+    </div>
+</div>
+
+<div>
+    <child3 (event)="recieveMessage($event)"></child3>
+</div>
+
+
+<router-outlet></router-outlet>
